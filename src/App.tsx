@@ -1,5 +1,7 @@
 import { useState } from 'react';
+import { Card } from './interfaces';
 import './App.css';
+import SingleCard from './components/SingleCard';
 
 const cardImages = [
   { src: '/img/helmet-1.png' },
@@ -26,10 +28,7 @@ function App() {
       <button onClick={shuffleCards}>New Game</button>
       <div className='card-grid'>
         {cards.map((card) => (
-          <div key={card.id} className='card'>
-            <img className='front' src={card.src} alt='card front' />
-            <img className='back' src='/img/cover.png' alt='card back' />
-          </div>
+          <SingleCard key={card.id} card={card} />
         ))}
       </div>
     </div>
@@ -37,8 +36,3 @@ function App() {
 }
 
 export default App;
-
-interface Card {
-  id: number;
-  src: string;
-}
