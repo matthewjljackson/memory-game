@@ -36,7 +36,7 @@ function App() {
   const resetTurn = () => {
     setChoiceOne(null);
     setChoiceTwo(null);
-    setTurns((previousTurns) => previousTurns++);
+    setTurns((previousTurns) => previousTurns + 1);
     setDisabled(false);
   };
 
